@@ -1,0 +1,3 @@
+let bateaux=(function(){
+    function 
+})();
