@@ -23,7 +23,7 @@ const mysql = require('mysql');
 /**** Import project libs ****/
 
 const states = require('./back/modules/states');
-const Theoden = require('./back/models/Theoden');
+//const Theoden = require('./back/models/Theoden');
 
 /**** Project configuration ****/
 
@@ -57,6 +57,13 @@ const con = mysql.createConnection({
 con.connect(err =>{
     if(err) throw err;
     else console.log("connection effectuee");
+
+    let sql = "INSERT INTO new_table (Username,Password) VALUES ('Noé','salut')";
+    con.query(sql,(err,result)=>{
+        if (err) throw err;
+        console.log('nouvel utilisateur');
+        console.log(result);
+    })
 })
 
 /**** Code ****/
@@ -67,7 +74,7 @@ app.get('/', (req, res) => {
     // Test des modules 
     states.printServerStatus();
     states.printProfStatus();
-    let test = new Theoden();
+    let test = new Bateaux();
 
     // Si l'utilisateur n'est pas connecté
     if (!sessionData.username) {

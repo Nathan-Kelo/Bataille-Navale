@@ -1,3 +1,3 @@
 let bateaux=(function(){
-    function 
+    console.log("bateaux") 
 })();
