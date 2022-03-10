@@ -58,13 +58,27 @@ con.connect(err =>{
     if(err) throw err;
     else console.log("connection effectuee");
 
-    let sql = "INSERT INTO new_table (Username,Password) VALUES ('Noé','salut')";
-    con.query(sql,(err,result)=>{
-        if (err) throw err;
-        console.log('nouvel utilisateur');
-        console.log(result);
-    })
-})
+    let username_ = 'usertest2';
+    let password_ = 'passy_';
+    let id_ = 5;
+    function test(user_,pass_,id_){
+
+        let sql = "INSERT INTO new_table (Username,Password,id) VALUES (?,?,?)";
+        con.query(sql,[user_,pass_,id_],(err) =>{
+            if (err) throw err;
+            console.log('Bonjour à tous');
+            
+        });
+
+        con.query("SELECT * FROM new_table",(err,result) =>{
+            if(err) throw err;
+            console.log(result);
+        });
+    };
+    test(username_,password_,id_);
+
+    
+});
 
 /**** Code ****/
 
@@ -117,6 +131,10 @@ io.on('connection', (socket) => {
     });
 });
 
+con.on('error', function(err) {
+    console.log("[mysql error]",err);
+  });
+  
 http.listen(4200, () => {
     console.log('Serveur lancé sur le port 4200');
 });
