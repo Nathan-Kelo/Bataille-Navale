@@ -24,23 +24,20 @@ class Bateaux{
 
     get caseHits(){
         return this.caseHits;
-    }
+    }    
+}
+Bateaux.prototype.setFin=function(x_,y_){
+    this.fin.x=x_;
+    this.fin.y=y_;
+}
 
-    setDebut(x_,y_){
-        this.debut.x=x_;
-        this.debut.y=y_;
-    }
+Bateaux.prototype.setDebut=function(x_,y_){
+    this.debut.x=x_;
+    this.debut.y=y_;
+}
 
-    setFin(x_,y_){
-        this.fin.x=x_;
-        this.fin.y=y_;
-    }
-
-    checkCoule(){
-        this.isCoule=this.caseHits.every((i)=>i==1)
-    }
-    
-
+Bateaux.prototype.checkCoule=function(){
+    this.isCoule=this.caseHits.every((i)=>i==1)
 }
 
 module.exports=Bateaux;
