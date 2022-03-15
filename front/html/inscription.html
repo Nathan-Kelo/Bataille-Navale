@@ -5,12 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'inscription</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/front/css/style.css">
-=======
     <link rel="stylesheet" href="../css/style.css">
-    <link type="javascript/text" href="index.js">
->>>>>>> 722467b5c8a342322d888763349a5db5000612eb
+    <script src="../../node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script src="../../back/models/signIn.js"></script>
 </head>
 <body>
     <header>
@@ -21,13 +18,8 @@
     <form>
         <fieldset class="account-info">
             <label>
-<<<<<<< HEAD
                 Username
                 <input type="text" name="username">
-=======
-                Uername
-                <input type="text" name="username" required>
->>>>>>> 722467b5c8a342322d888763349a5db5000612eb
             </label>
             <label>
                 Password
@@ -44,6 +36,10 @@
         </fieldset>
     </form>
     </center>
-    <link type="javascript/text" href="index.js">
+    <link type="javascript/text" src="index.js">
 </body>
+<script>
+    let socket = io();
+</script>
+
 </html>

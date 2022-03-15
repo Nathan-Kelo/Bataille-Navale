@@ -61,7 +61,11 @@ con.connect(err =>{
     let username_ = 'usertest2';
     let password_ = 'passy_';
     let id_ = 5;
-    function test(user_,pass_,id_){
+
+    io.on('username',username=>{//on recupere l'username sur le socket
+        console.log(username);
+    })
+    function test(user_,pass_,id_){//cette fonction permet de mettre les nom d'utilisateur dans la BDD
 
         let sql = "INSERT INTO new_table (Username,Password,id) VALUES (?,?,?)";
         con.query(sql,[user_,pass_,id_],(err) =>{
